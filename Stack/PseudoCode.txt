@@ -1,0 +1,30 @@
+
+class Stack
+
+	int[] stack
+	int size
+	int top = -1
+
+
+	Stack(int s)
+		size = s
+		stack = new int[s]
+		fill(stack, -1)
+
+
+	push(value)
+		if(top+1 < size) stack[++top] = value;
+
+
+	pop()
+		if(top > -1)
+			stack[top] = -1;
+			return stack[top--];
+		else
+			return -1;
+
+
+	peek() return stack[top];
+
+
+	getStack() return stack;

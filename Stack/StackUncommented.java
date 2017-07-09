@@ -35,8 +35,8 @@ public class Stack {
 	}
 
 
-	public void printStack() {
-		System.out.println(Arrays.toString(stack));
+	public int[] getStack() {
+		return stack;
 	}
 
 

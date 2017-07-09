@@ -8,10 +8,16 @@ public class Stack {
 
 
 	Stack(int size) {
-		stackSize = size;
 		stack = new int[size];
+		stackSize = size;
 		Arrays.fill(stack, -1);
 	}
+
+
+	public boolean isEmpty() { return stackTop == -1; }
+
+
+	public boolean isFull() { return stackTop+1 == stackSize; }
 
 
 	public void push(int value) {
@@ -30,14 +36,10 @@ public class Stack {
 	}
 
 
-	public int peek() {
-		return stack[stackTop];
-	}
+	public int peek() { return stack[stackTop]; }
 
 
-	public int[] getStack() {
-		return stack;
-	}
+	public int[] getStack() { return stack; }
 
 
 	public static void main(String[] args) {}

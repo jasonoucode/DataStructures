@@ -14,10 +14,18 @@ public class Stack {
 
 	// Used to initialize the stack
 	Stack(int size) {
-		stackSize = size;
 		stack = new int[size];
+		stackSize = size;
 		Arrays.fill(stack, -1);
 	}
+
+
+	// Checks if stack is empty
+	public boolean isEmpty() { return stackTop == -1; }
+
+
+	// Checks if stack is full
+	public boolean isFull() { return stackTop+1 == stackSize; }
 
 
 	// Push method to input a new value into the stack
@@ -46,15 +54,11 @@ public class Stack {
 
 	// Peek method to look at the top of the stack.
 	// The value -1 means null or nothing in the stack.
-	public int peek() {
-		return stack[stackTop];
-	}
+	public int peek() { return stack[stackTop]; }
 
 
 	// Used to get the entire stack.
-	public int[] getStack() {
-		return stack;
-	}
+	public int[] getStack() { return stack; }
 
 
 	// Main

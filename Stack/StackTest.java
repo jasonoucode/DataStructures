@@ -60,7 +60,7 @@ public class StackTest {
 		for (int i = 1; i < 4; ++i)
 			s.push(i);
 
-		return Arrays.equals(s.getStack(), expectedStack);
+		return s.isFull();
 	}
 
 
@@ -77,7 +77,7 @@ public class StackTest {
 			s.pop();
 		}
 
-		return (s.pop() == -1);
+		return s.isEmpty();
 	}
 
 
@@ -94,7 +94,7 @@ public class StackTest {
 			s.pop();
 		}
 
-		return (s.peek() == 3);
+		return s.peek() == 3;
 	}
 
 

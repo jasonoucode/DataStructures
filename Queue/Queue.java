@@ -17,24 +17,47 @@ public class Queue {
 
 	// Used to initialize the stack
 	Queue(int size) {
-		queueSize = size;
 		queue = new int[size];
+		queueSize = size;
+		front = rear = -1;
 		Arrays.fill(queue, -1);
 	}
 
 
+	// isEmpty()
+	public boolean isEmpty() { return front == -1 && rear == -1; }
+
+
+	// isFull()
+	public boolean isFull() { return storedItems == queueSize; }
+
+
+	// getSize()
+	public int getSize() { return storedItems; }
+
+
+	// Insert
 	public void enqueue(int value) {
-		if(storedItems+1 <= queueSize) {
-			queue[rear++] = value;
-			++storedItems;
+		if (isFull()) {
+			return;
+		} else if (isEmpty()) {
+			front = rear = 0;
+		} else {
+			++rear;
 		}
+		queue[rear] = value;
+		++storedItems;
 	}
 
 
+	// Delete
 	public void dequeue() {
-		if (storedItems > 0) {
-			queue[front++] = -1;
-			--storedItems;
+		if (isEmpty()) {
+			return;
+		} else if (front == rear) {
+			front = rear = -1;
+		} else {
+			++front;
 		}
 	}
 

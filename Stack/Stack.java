@@ -28,12 +28,16 @@ public class Stack {
 	public boolean isFull() { return stackTop+1 == stackSize; }
 
 
+	// Checks for how many items in the stack
+	public int getSize() { return stackSize; }
+
+
 	// Push method to input a new value into the stack
 	//		as long as the stack isn't full.
 	public void push(int value) {
 		// As long as stack has space,
 		//		push a new item onto top of stack.
-		if(stackTop+1 < stackSize)
+		if(!isFull())
 			stack[++stackTop] = value;
 	}
 
@@ -43,7 +47,7 @@ public class Stack {
 	public int pop() {
 		// As long as the stack isn't empty,
 		//		pop the top of the stack.
-		if(stackTop > -1) {
+		if(!isEmpty()) {
 			stack[stackTop] = -1;
 			return stack[stackTop--];
 		} else {

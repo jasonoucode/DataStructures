@@ -20,14 +20,17 @@ public class Stack {
 	public boolean isFull() { return stackTop+1 == stackSize; }
 
 
+	public int getSize() { return stackSize; }
+
+
 	public void push(int value) {
-		if(stackTop+1 < stackSize)
+		if(!isFull())
 			stack[++stackTop] = value;
 	}
 
 
 	public int pop() {
-		if(stackTop > -1) {
+		if(!isEmpty()) {
 			stack[stackTop] = -1;
 			return stack[stackTop--];
 		} else {

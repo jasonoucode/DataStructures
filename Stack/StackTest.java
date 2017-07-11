@@ -42,9 +42,8 @@ public class StackTest {
 		for (int i = 1; i < 6; ++i)
 			s.push(i);
 
-		for (int i = 1; i < 6; ++i) {
+		for (int i = 1; i < 6; ++i)
 			s.pop();
-		}
 
 		return Arrays.equals(s.getStack(), expectedStack);
 	}
@@ -73,9 +72,8 @@ public class StackTest {
 		for (int i = 1; i < 6; ++i)
 			s.push(i);
 
-		for (int i = 1; i < 6; ++i) {
+		for (int i = 1; i < 6; ++i)
 			s.pop();
-		}
 
 		return s.isEmpty();
 	}
@@ -90,9 +88,8 @@ public class StackTest {
 		for (int i = 1; i < 6; ++i)
 			s.push(i);
 
-		for (int i = 1; i < 3; ++i) {
+		for (int i = 1; i < 3; ++i)
 			s.pop();
-		}
 
 		return s.peek() == 3;
 	}

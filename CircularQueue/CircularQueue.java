@@ -50,6 +50,8 @@ public class CircularQueue {
 			// If the queue is not empty,
 			//		we set the rear to the next
 			//		index in the circular queue.
+			// (index + 1) % size of queue helps us find the
+			//		next index for circular queues
 			rear = (rear+1) % queueSize;
 		}
 		// After setting the index, we put the value we want
@@ -77,6 +79,8 @@ public class CircularQueue {
 			// If the queue is not empty,
 			//		we set the front to the next
 			//		index in the circular queue.
+			// (index + 1) % size of queue helps us find the
+			//		next index for circular queues
 			front = (front+1) % queueSize;
 		}
 		--storedItems;

@@ -6,7 +6,7 @@ __Language__: _Java_
 Data Structures   | Completion Date
 ----------------- | ----------------
 Stacks            | July 9th, 2017
-Circular Queues   | TBD
+Circular Queues   | July 11th, 2017
 Linked Lists      | TBD
 Binary Trees      | TBD
 Tries             | TBD

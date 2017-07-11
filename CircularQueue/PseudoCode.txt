@@ -1,0 +1,42 @@
+class CircularQueue
+
+	int[] queue;
+	int queueSize, front, rear, storedItems;
+
+
+	CircularQueue(int size)
+		queue = new int[size];
+		queueSize = size;
+		front = rear = -1;
+		fill(queue, -1);
+
+
+	enqueue(int value)
+		if (isFull())
+			return;
+		else if (isEmpty())
+			front = rear = 0;
+		else
+			rear = (rear+1) % queueSize;
+		queue[rear] = value;
+		++storedItems;
+
+
+	dequeue()
+		if (isEmpty())
+			return;
+		else if (front == rear)
+			front = rear = -1;
+		else
+			front = (front+1) % queueSize;
+		--storedItems;
+
+
+	peek()
+		if (!empty)
+			return queue[front];
+		else
+			return -1;
+
+
+	getCircularQueue() return queue;

@@ -14,13 +14,12 @@ public class CircularQueueTest {
 
 		CircularQueue q = new CircularQueue(4);
 
-		return Arrays.equals(q.getCircularQueue(), expectedCircularQueue);
+		return Arrays.equals(q.getCircularQueue(), expectedCircularQueue) && q.isEmpty();
 	}
 
 
 	// Tests the enqueue method with 5 items.
 	private static boolean testEnqueueFull() {
-		int[] expectedCircularQueue = new int[]{1, 2, 3, 4, 5};
 		++numTests;
 
 		CircularQueue q = new CircularQueue(5);
@@ -31,35 +30,28 @@ public class CircularQueueTest {
 		return q.isFull();
 	}
 
-
-	// Tests the dequeue method with 5 items.
-	private static boolean testDequeueFull() {
+	// Tests the circular queue by doing a series
+	//		of enqueues and dequeues to make sure
+	//		both enqueue and dequeue are working
+	//		as well as our queue being circular.
+	private static boolean testCircularEnqueue() {
 		++numTests;
 
-		CircularQueue q = new CircularQueue(5);
+		CircularQueue q = new CircularQueue(3);
 
-		for (int i = 1; i < 6; ++i)
+		for (int i = 1; i < 4; ++i)
 			q.enqueue(i);
 
-		for (int i = 1; i < 7; ++i)
+		for (int i = 1; i < 3; ++ i)
 			q.dequeue();
 
-		return q.peek() == -1;
-	}
-
-	// Tests the dequeue method with 5 items.
-	private static boolean testDequeue() {
-		++numTests;
-
-		CircularQueue q = new CircularQueue(5);
-
-		for (int i = 1; i < 6; ++i)
+		for (int i = 6; i < 8; ++ i)
 			q.enqueue(i);
 
-		for (int i = 1; i < 7; ++i)
+		for (int i = 1; i < 3; ++ i)
 			q.dequeue();
 
-		return q.peek() == -1;
+		return q.peek() == 7;
 	}
 
 
@@ -73,17 +65,12 @@ public class CircularQueueTest {
 		if(testEnqueueFull())
 			++passedTests;
 		else
-			System.out.println("Test Enqueue: Full Failed.");
+			System.out.println("Test Enqueue Full: Failed.");
 
-		if(testDequeueFull())
+		if(testCircularEnqueue())
 			++passedTests;
 		else
-			System.out.println("Test Dequeue Full: Failed.");
-
-		if(testDequeue())
-			++passedTests;
-		else
-			System.out.println("Test Dequeue: Failed.");
+			System.out.println("Test Circular Enqueue: Failed.");
 
 		System.out.println("Tests Passed: " + passedTests + " / " + numTests);
 	}

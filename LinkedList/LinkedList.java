@@ -25,7 +25,7 @@ public class LinkedList {
 	}
 
 
-	public void deleteWithValue(int data) {
+	public void deleteWithData(int data) {
 		if (head == null) return;
 		if (head.data == data) {
 			head = head.next;
@@ -44,7 +44,17 @@ public class LinkedList {
 
 
 	public boolean findByData(int data) {
-		return true;
+		if (head == null) return false;
+		if (head.data == data)
+			return true;
+
+		Node current = head;
+		while (current.next != null) {
+			if (current.next.data == data)
+				return true;
+			current = current.next;
+		}
+		return false;
 	}
 
 

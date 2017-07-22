@@ -24,6 +24,9 @@ BinaryTree.class: BinaryTree.java
 BinaryTreeTest.class: BinaryTreeTest.java
 	$(JCC) $(JFLAGS) BinaryTreeTest.java
 
+Node.class: Node.java
+	$(JCC) $(JFLAGS) Node.java
+
 # Running tests to make sure our code is working.
 # 'make test' to run tests.
 test: BinaryTreeTest.class
